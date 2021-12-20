@@ -1,0 +1,18 @@
+#!/bin/bash
+
+_publish(){
+    local tag=${1}
+    docker build -t yannoff/ng:${tag} ${tag}
+    docker push yannoff/ng:${tag}
+    docker tag yannoff/ng:${tag} yannoff/ng:latest
+    docker push yannoff/ng:latest
+}
+
+
+# For now, only build LTS version
+set -- 14
+
+for version
+do
+    _publish ${version}
+done
