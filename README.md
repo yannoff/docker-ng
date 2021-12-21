@@ -27,11 +27,27 @@ services:
             args:
                 GIT_USER: acme
                 GIT_EMAIL: acme@example.com
+
         volumes:
             - ./:/src
+
         working_dir: /src
+
         ports:
             - 4200:4200
+
+        # Here we launch the Angular Live Development Server
+        # as the main container command
+        # Beware that in order to be accessible from the host
+        # machine, the server must listen to 0.0.0.0 instead
+        # of the default "localhost" binding
+        command:
+            - ng
+            - serve
+            - --host
+            - 0.0.0.0
+            - --verbose
+            - --watch
 ```
 
 ### Compiled image
