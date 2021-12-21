@@ -23,7 +23,7 @@ version: '3.6'
 services:
     ng:
         build:
-            context: https://github.com/yannoff/docker-ng#:14
+            context: https://github.com/yannoff/docker-ng.git#:14
             args:
                 GIT_USER: acme
                 GIT_EMAIL: acme@example.com
