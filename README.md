@@ -54,6 +54,13 @@ services:
 
 _Compiled images are convenient to run one-shot commands, such as creating a brand new project._
 
+#### Supported tags
+
+- [yannoff/ng:16](Dockerfile/14) Based on [node:16-alpine](https://github.com/nodejs/docker-node/blob/b36041b26d8423f1838fb8232411a12f882cbb6a/16/alpine3.15/Dockerfile).
+- [yannoff/ng:14](Dockerfile/14) Based on [node:14-alpine](https://github.com/nodejs/docker-node/blob/b36041b26d8423f1838fb8232411a12f882cbb6a/14/alpine3.15/Dockerfile).
+- [yannoff/ng:12](Dockerfile/14) Based on [node:12-alpine](https://github.com/nodejs/docker-node/blob/b36041b26d8423f1838fb8232411a12f882cbb6a/12/alpine3.15/Dockerfile).
+
+
 #### Example
 
 ```
