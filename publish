@@ -4,6 +4,10 @@ _publish(){
     local tag=${1}
     docker build --build-arg NV=${tag}  -t yannoff/ng:${tag} 14/
     docker push yannoff/ng:${tag}
+}
+
+_publish_latest(){
+    local tag=${1}
     docker tag yannoff/ng:${tag} yannoff/ng:latest
     docker push yannoff/ng:latest
 }
@@ -15,4 +19,5 @@ set -- 12 14 16
 for version
 do
     _publish ${version}
+    [ "${version}" -eq "16" ] && _publish_latest ${version}
 done
