@@ -2,15 +2,15 @@
 
 _publish(){
     local tag=${1}
-    docker build -t yannoff/ng:${tag} ${tag}
+    docker build --build-arg NV=${tag}  -t yannoff/ng:${tag} 14/
     docker push yannoff/ng:${tag}
     docker tag yannoff/ng:${tag} yannoff/ng:latest
     docker push yannoff/ng:latest
 }
 
 
-# For now, only build LTS version
-set -- 14
+# For now, only build LTS versions
+set -- 12 14 16
 
 for version
 do
